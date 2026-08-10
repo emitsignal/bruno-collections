@@ -1,13 +1,13 @@
 meta {
   name: Update topic
-  type: http
   seq: 5
+  type: http
 }
 
 patch {
-  url: {{baseUrl}}/topics/{{topic}}
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/topics/{{topic}}
 }
 
 headers {
@@ -16,9 +16,9 @@ headers {
 
 body:json {
   {
-    "displayName": "My Topic",
+    "accessMode": "private",
     "description": "Deploy notifications for the api service",
-    "accessMode": "private"
+    "displayName": "My Topic"
   }
 }
 

@@ -1,13 +1,13 @@
 meta {
   name: Claim topic
-  type: http
   seq: 6
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/topics/{{topic}}/claim
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/topics/{{topic}}/claim
 }
 
 headers {

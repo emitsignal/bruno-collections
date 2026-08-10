@@ -1,13 +1,13 @@
 meta {
   name: Serve upload
-  type: http
   seq: 5
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/uploads/example.png
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/uploads/example.png
 }
 
 docs {

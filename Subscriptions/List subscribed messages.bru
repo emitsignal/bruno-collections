@@ -1,19 +1,19 @@
 meta {
   name: List subscribed messages
-  type: http
   seq: 6
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/subscriptions/messages?deviceId={{deviceId}}&limit=50
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/subscriptions/messages?deviceId={{deviceId}}&limit=50
 }
 
 params:query {
+  ~cursor:
   deviceId: {{deviceId}}
   limit: 50
-  ~cursor: 
   ~minPriority: 3
   ~tags: deploy
   ~topicName: {{topic}}

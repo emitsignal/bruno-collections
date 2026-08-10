@@ -1,13 +1,13 @@
 meta {
   name: Publish with actions and media
-  type: http
   seq: 5
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/publish/{{topic}}
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/publish/{{topic}}
 }
 
 headers {
@@ -16,16 +16,33 @@ headers {
 
 body:json {
   {
-    "title": "Build failed",
-    "body": "3 tests failed on main",
-    "priority": 4,
-    "bannerImage": { "href": "https://example.com/banner.png", "title": "run summary" },
-    "inlineImages": ["https://example.com/chart.png"],
-    "inlineAttachments": [{ "href": "https://example.com/build.log", "title": "build.log" }],
     "actions": [
-      { "type": "view", "label": "Open run", "url": "https://example.com/runs/42" },
-      { "type": "acknowledge", "label": "Ack" }
-    ]
+      {
+        "label": "Open run",
+        "type": "view",
+        "url": "https://example.com/runs/42"
+      },
+      {
+        "label": "Ack",
+        "type": "acknowledge"
+      }
+    ],
+    "bannerImage": {
+      "href": "https://example.com/banner.png",
+      "title": "run summary"
+    },
+    "body": "3 tests failed on main",
+    "inlineAttachments": [
+      {
+        "href": "https://example.com/build.log",
+        "title": "build.log"
+      }
+    ],
+    "inlineImages": [
+      "https://example.com/chart.png"
+    ],
+    "priority": 4,
+    "title": "Build failed"
   }
 }
 

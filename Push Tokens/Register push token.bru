@@ -1,13 +1,13 @@
 meta {
   name: Register push token
-  type: http
   seq: 2
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/push-tokens
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/push-tokens
 }
 
 headers {

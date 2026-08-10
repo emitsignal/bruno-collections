@@ -1,13 +1,13 @@
 meta {
   name: Listen to many topics (SSE)
-  type: http
   seq: 10
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/listen?topics={{topic}}
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/listen?topics={{topic}}
 }
 
 headers {
@@ -15,8 +15,8 @@ headers {
 }
 
 params:query {
-  ~topics: {{topic}}
   ~since: all
+  topics: {{topic}}
 }
 
 docs {

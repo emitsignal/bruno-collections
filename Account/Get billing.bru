@@ -1,13 +1,13 @@
 meta {
   name: Get billing
-  type: http
   seq: 1
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/billing
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/billing
 }
 
 docs {

@@ -1,13 +1,13 @@
 meta {
   name: Claim device subscriptions
-  type: http
   seq: 5
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/subscriptions/claim
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/subscriptions/claim
 }
 
 headers {

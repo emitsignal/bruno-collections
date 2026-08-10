@@ -1,13 +1,13 @@
 meta {
   name: Receive webhook
-  type: http
   seq: 9
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/h/{{webhookSlug}}
-  body: json
   auth: none
+  body: json
+  url: {{baseUrl}}/h/{{webhookSlug}}
 }
 
 headers {
@@ -16,8 +16,8 @@ headers {
 
 body:json {
   {
-    "event": "deployment.succeeded",
     "environment": "production",
+    "event": "deployment.succeeded",
     "sha": "0354654"
   }
 }

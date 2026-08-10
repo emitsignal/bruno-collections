@@ -1,6 +1,9 @@
 {
-  "version": "1",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ],
   "name": "EmitSignal",
   "type": "collection",
-  "ignore": ["node_modules", ".git"]
+  "version": "1"
 }

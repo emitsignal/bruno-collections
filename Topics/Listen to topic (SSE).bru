@@ -1,13 +1,13 @@
 meta {
   name: Listen to topic (SSE)
-  type: http
   seq: 9
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/topics/{{topic}}/listen
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/topics/{{topic}}/listen
 }
 
 headers {

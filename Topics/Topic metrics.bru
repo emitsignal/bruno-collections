@@ -1,13 +1,13 @@
 meta {
   name: Topic metrics
-  type: http
   seq: 4
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/topics/{{topic}}/metrics
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/topics/{{topic}}/metrics
 }
 
 docs {

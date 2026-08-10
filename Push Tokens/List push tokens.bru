@@ -1,11 +1,11 @@
 meta {
   name: List push tokens
-  type: http
   seq: 1
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/push-tokens
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/push-tokens
 }

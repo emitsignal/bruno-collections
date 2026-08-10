@@ -1,13 +1,13 @@
 meta {
   name: Publish (deprecated topic path)
-  type: http
   seq: 6
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/topic/{{topic}}
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/topic/{{topic}}
 }
 
 headers {
@@ -16,8 +16,8 @@ headers {
 
 body:json {
   {
-    "title": "Legacy path",
-    "body": "responds with Deprecation and Link headers"
+    "body": "responds with Deprecation and Link headers",
+    "title": "Legacy path"
   }
 }
 

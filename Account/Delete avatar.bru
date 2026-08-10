@@ -1,11 +1,11 @@
 meta {
   name: Delete avatar
-  type: http
   seq: 3
+  type: http
 }
 
 delete {
-  url: {{baseUrl}}/user/avatar
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/user/avatar
 }

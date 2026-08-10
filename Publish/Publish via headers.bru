@@ -1,13 +1,13 @@
 meta {
   name: Publish via headers
-  type: http
   seq: 3
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/publish/{{topic}}
-  body: text
   auth: inherit
+  body: text
+  url: {{baseUrl}}/publish/{{topic}}
 }
 
 headers {

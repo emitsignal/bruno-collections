@@ -1,11 +1,11 @@
 meta {
   name: Get webhook
-  type: http
   seq: 4
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/webhooks/{{webhookId}}
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/webhooks/{{webhookId}}
 }

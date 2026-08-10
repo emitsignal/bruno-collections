@@ -1,13 +1,13 @@
 meta {
   name: Stream deliveries (SSE)
-  type: http
   seq: 8
+  type: http
 }
 
 get {
-  url: {{baseUrl}}/webhooks/stream
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/webhooks/stream
 }
 
 headers {

@@ -1,13 +1,13 @@
 meta {
   name: Upload attachments
-  type: http
   seq: 3
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/messages/{{messageId}}/attachments
-  body: multipartForm
   auth: inherit
+  body: multipartForm
+  url: {{baseUrl}}/messages/{{messageId}}/attachments
 }
 
 body:multipart-form {

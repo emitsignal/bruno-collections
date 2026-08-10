@@ -1,13 +1,13 @@
 meta {
   name: Subscribe
-  type: http
   seq: 2
+  type: http
 }
 
 post {
-  url: {{baseUrl}}/subscriptions
-  body: json
   auth: inherit
+  body: json
+  url: {{baseUrl}}/subscriptions
 }
 
 headers {
@@ -17,12 +17,12 @@ headers {
 body:json {
   {
     "deviceId": "{{deviceId}}",
-    "topicName": "{{topic}}",
     "pushEnabled": true,
     "settings": {
       "description": "deploys for the api service",
       "listenSince": "subscription_date"
-    }
+    },
+    "topicName": "{{topic}}"
   }
 }
 

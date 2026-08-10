@@ -1,11 +1,11 @@
 meta {
   name: Release topic claim
-  type: http
   seq: 7
+  type: http
 }
 
 delete {
-  url: {{baseUrl}}/topics/{{topic}}/claim
-  body: none
   auth: inherit
+  body: none
+  url: {{baseUrl}}/topics/{{topic}}/claim
 }
