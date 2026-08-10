@@ -1,0 +1,11 @@
+meta {
+  name: Get message
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/messages/{{messageId}}
+  body: none
+  auth: inherit
+}

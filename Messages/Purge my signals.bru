@@ -1,0 +1,15 @@
+meta {
+  name: Purge my signals
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/me/signals
+  body: none
+  auth: inherit
+}
+
+docs {
+  Destructive: enqueues deletion of every message the authenticated user sent.
+}

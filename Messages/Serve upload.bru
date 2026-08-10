@@ -1,0 +1,16 @@
+meta {
+  name: Serve upload
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/uploads/example.png
+  body: none
+  auth: inherit
+}
+
+docs {
+  Serves a stored file by its storage key. With FILE_STORAGE_PROVIDER=local the
+  key is the path returned by the attachment or avatar upload.
+}
