@@ -4,12 +4,12 @@
 
 ## Usage
 
-Open Bruno → **Open Collection** → select this directory, then pick the **Local**
+Open Bruno → **Open Collection** → select this directory, then pick the **local**
 environment.
 
 ## Environment
 
-`environments/Local.bru` targets the dev server on `:5001`. `token` is declared as a
+`environments/local.bru` targets the dev server on `:5001`. `token` is declared as a
 secret variable, so it is never written to disk in the collection.
 
 | Variable | Purpose |
@@ -66,6 +66,11 @@ to bottom populates most variables on its own:
   the provider's real signing secret.
 
 ## File conventions
+
+Request filenames are kebab-case; `bruno.json`, `collection.bru`, and the per-folder
+`folder.bru` keep their reserved names. A request's display name comes from its `meta`
+block, not its filename — but an environment has no `meta` block, so `environments/local.bru`
+is what names the **local** environment in the picker.
 
 Keys are sorted alphabetically in every order-insensitive block — `meta`, the method
 block, `headers`, `params:query`, `vars`, and object keys inside `body:json`. Array
