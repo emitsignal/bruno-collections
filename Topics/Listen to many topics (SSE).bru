@@ -1,0 +1,25 @@
+meta {
+  name: Listen to many topics (SSE)
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/listen?topics={{topic}}
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: text/event-stream
+}
+
+params:query {
+  ~topics: {{topic}}
+  ~since: all
+}
+
+docs {
+  `topics` is a comma-separated list. Omit it to stream every topic the
+  authenticated user owns or subscribes to.
+}

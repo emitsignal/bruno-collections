@@ -1,0 +1,15 @@
+meta {
+  name: Topic metrics
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/topics/{{topic}}/metrics
+  body: none
+  auth: inherit
+}
+
+docs {
+  24-hour message count, count of priority-5 messages, and an hourly histogram.
+}

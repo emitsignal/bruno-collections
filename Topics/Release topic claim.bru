@@ -1,0 +1,11 @@
+meta {
+  name: Release topic claim
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/topics/{{topic}}/claim
+  body: none
+  auth: inherit
+}

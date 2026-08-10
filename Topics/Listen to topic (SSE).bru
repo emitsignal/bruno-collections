@@ -1,0 +1,25 @@
+meta {
+  name: Listen to topic (SSE)
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/topics/{{topic}}/listen
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: text/event-stream
+}
+
+params:query {
+  ~since: all
+}
+
+docs {
+  Long-lived SSE stream; a keep-alive frame is sent every 25s. `since` replays
+  history — `all`, a unix timestamp, or a message id. Bruno will hold this
+  request open, so cancel it manually when you are done.
+}

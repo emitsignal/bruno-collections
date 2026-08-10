@@ -1,0 +1,27 @@
+meta {
+  name: Update topic
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/topics/{{topic}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "displayName": "My Topic",
+    "description": "Deploy notifications for the api service",
+    "accessMode": "private"
+  }
+}
+
+docs {
+  Owner only. `accessMode` is `public`, `readonly`, or `private`.
+}

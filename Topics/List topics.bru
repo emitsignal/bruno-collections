@@ -1,0 +1,15 @@
+meta {
+  name: List topics
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/topics?q=
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~q: 
+}

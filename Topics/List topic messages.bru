@@ -1,0 +1,23 @@
+meta {
+  name: List topic messages
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/topics/{{topic}}/messages?limit=50
+  body: none
+  auth: inherit
+}
+
+params:query {
+  limit: 50
+  ~cursor: 
+  ~minPriority: 3
+  ~tags: deploy,production
+}
+
+docs {
+  `limit` is 1-200 (default 50). `cursor` paginates. `minPriority` is 1-5.
+  `tags` is a comma-separated list.
+}
