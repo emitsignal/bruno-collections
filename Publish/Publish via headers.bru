@@ -1,0 +1,28 @@
+meta {
+  name: Publish via headers
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/publish/{{topic}}
+  body: text
+  auth: inherit
+}
+
+headers {
+  Content-Type: text/plain
+  Title: Disk almost full
+  X-Priority: high
+  X-Tags: infra,disk
+}
+
+body:text {
+  /dev/sda1 is at 94% on web-03
+}
+
+docs {
+  Any non-JSON content type is parsed from headers instead of the body: the raw
+  body becomes the message body. `X-Priority` accepts 1-5 or low/high/urgent.
+  Aliases exist for most fields (`t`/`title`, `p`/`prio`/`priority`, `ta`/`tags`).
+}

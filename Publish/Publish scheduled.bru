@@ -1,0 +1,33 @@
+meta {
+  name: Publish scheduled
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/publish/{{topic}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Scheduled reminder",
+    "body": "fires in five minutes",
+    "scheduledAt": {{scheduledAt}}
+  }
+}
+
+script:pre-request {
+  bru.setVar("scheduledAt", Math.floor(Date.now() / 1000) + 300);
+}
+
+docs {
+  `scheduledAt` is a unix timestamp in seconds, at most one year out. Scheduled
+  messages skip the SSE bus and go straight onto the schedule queue, so the
+  response is `{ "message": "scheduled" }` rather than `"posted"`.
+}

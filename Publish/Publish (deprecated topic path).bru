@@ -1,0 +1,27 @@
+meta {
+  name: Publish (deprecated topic path)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/topic/{{topic}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Legacy path",
+    "body": "responds with Deprecation and Link headers"
+  }
+}
+
+docs {
+  Identical behaviour to `POST /publish/*`, kept for older clients. The response
+  carries `Deprecation` and `Link: </publish/*>; rel="successor-version"`.
+}

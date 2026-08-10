@@ -1,0 +1,36 @@
+meta {
+  name: Publish with actions and media
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/publish/{{topic}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Build failed",
+    "body": "3 tests failed on main",
+    "priority": 4,
+    "bannerImage": { "href": "https://example.com/banner.png", "title": "run summary" },
+    "inlineImages": ["https://example.com/chart.png"],
+    "inlineAttachments": [{ "href": "https://example.com/build.log", "title": "build.log" }],
+    "actions": [
+      { "type": "view", "label": "Open run", "url": "https://example.com/runs/42" },
+      { "type": "acknowledge", "label": "Ack" }
+    ]
+  }
+}
+
+docs {
+  At most 2 actions. `type` is `view` (needs `url`) or `acknowledge`. Media
+  entries are a URL string or `{ href, title }`; the per-array inline limit
+  depends on the publisher's plan (anonymous publishers get the smallest).
+}

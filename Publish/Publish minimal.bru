@@ -1,0 +1,21 @@
+meta {
+  name: Publish minimal
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/publish/{{topic}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "body": "hello from bruno"
+  }
+}
