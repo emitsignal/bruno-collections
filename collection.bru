@@ -1,0 +1,24 @@
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  # EmitSignal API
+
+  Publishers POST messages to named topics; subscribers receive them live over SSE.
+
+  ## Authentication
+
+  Collection-level auth sends `Authorization: Bearer {{token}}`. The server accepts
+  either a Better Auth session token (web/mobile/CLI) or an `es_`-prefixed API key
+  in that header. Requests that are meant to run anonymously set `auth: none`
+  explicitly — publishing and reading public topics work without credentials.
+
+  ## Environments
+
+  `Local` points at the dev server on :5001. Set `token` and `deviceId` there.
+}
