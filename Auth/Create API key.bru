@@ -1,0 +1,22 @@
+meta {
+  name: Create API key
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/auth/api-key/create
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "bruno"
+  }
+}
+
+docs {
+  Returns an `es_`-prefixed key. It is shown once — put it in `token` to
+  authenticate as that key instead of as a session.
+}

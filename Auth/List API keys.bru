@@ -1,0 +1,11 @@
+meta {
+  name: List API keys
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/auth/api-key/list
+  body: none
+  auth: inherit
+}

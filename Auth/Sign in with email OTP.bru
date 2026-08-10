@@ -1,0 +1,29 @@
+meta {
+  name: Sign in with email OTP
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/auth/sign-in/email-otp
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "you@example.com",
+    "otp": "123456"
+  }
+}
+
+script:post-response {
+  if (res.getStatus() === 200 && res.getBody()?.token) {
+    bru.setEnvVar("token", res.getBody().token);
+  }
+}
+
+docs {
+  On success the post-response script stores the session token into the `token`
+  environment variable, so every other request in this collection authenticates.
+}
