@@ -1,24 +1,24 @@
 meta {
-  name: Receive webhook
-  seq: 9
-  type: http
+    name: Receive webhook
+    seq: 9
+    type: http
 }
 
 post {
-  auth: none
-  body: json
-  url: {{baseUrl}}/h/{{webhookSlug}}
+    auth: none
+    body: json
+    url: {{baseUrl}}/h/{{webhookSlug}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "environment": "production",
-    "event": "deployment.succeeded",
-    "sha": "0354654"
+      "environment": "production",
+      "event": "deployment.succeeded",
+      "sha": "0354654"
   }
 }
 

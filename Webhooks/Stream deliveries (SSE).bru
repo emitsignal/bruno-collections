@@ -1,21 +1,21 @@
 meta {
-  name: Stream deliveries (SSE)
-  seq: 8
-  type: http
+    name: Stream deliveries (SSE)
+    seq: 8
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/webhooks/stream
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/webhooks/stream
 }
 
 headers {
-  Accept: text/event-stream
+    Accept: text/event-stream
 }
 
 params:query {
-  ~source: github
+    ~source: github
 }
 
 docs {

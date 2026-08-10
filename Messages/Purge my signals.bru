@@ -1,13 +1,13 @@
 meta {
-  name: Purge my signals
-  seq: 4
-  type: http
+    name: Purge my signals
+    seq: 4
+    type: http
 }
 
 delete {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/me/signals
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/me/signals
 }
 
 docs {

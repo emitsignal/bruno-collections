@@ -1,26 +1,26 @@
 meta {
-  name: Update subscription
-  seq: 3
-  type: http
+    name: Update subscription
+    seq: 3
+    type: http
 }
 
 patch {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/subscriptions/{{subscriptionId}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/subscriptions/{{subscriptionId}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "deviceId": "{{deviceId}}",
-    "pushEnabled": false,
-    "settings": {
-      "description": "muted for now",
-      "listenSince": "always"
-    }
+      "deviceId": "{{deviceId}}",
+      "pushEnabled": false,
+      "settings": {
+          "description": "muted for now",
+          "listenSince": "always"
+      }
   }
 }

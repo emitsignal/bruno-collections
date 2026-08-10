@@ -1,20 +1,20 @@
 meta {
-  name: List topic messages
-  seq: 3
-  type: http
+    name: List topic messages
+    seq: 3
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/topics/{{topic}}/messages?limit=50
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/topics/{{topic}}/messages?limit=50
 }
 
 params:query {
-  ~cursor:
-  limit: 50
-  ~minPriority: 3
-  ~tags: deploy,production
+    ~cursor:
+    limit: 50
+    ~minPriority: 3
+    ~tags: deploy,production
 }
 
 docs {

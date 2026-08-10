@@ -1,34 +1,34 @@
 meta {
-  name: Subscribe
-  seq: 2
-  type: http
+    name: Subscribe
+    seq: 2
+    type: http
 }
 
 post {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/subscriptions
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/subscriptions
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "deviceId": "{{deviceId}}",
-    "pushEnabled": true,
-    "settings": {
-      "description": "deploys for the api service",
-      "listenSince": "subscription_date"
-    },
-    "topicName": "{{topic}}"
+      "deviceId": "{{deviceId}}",
+      "pushEnabled": true,
+      "settings": {
+          "description": "deploys for the api service",
+          "listenSince": "subscription_date"
+      },
+      "topicName": "{{topic}}"
   }
 }
 
 script:post-response {
   if (res.getBody()?.id) {
-    bru.setEnvVar("subscriptionId", res.getBody().id);
+      bru.setEnvVar("subscriptionId", res.getBody().id);
   }
 }
 

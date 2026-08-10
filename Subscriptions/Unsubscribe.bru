@@ -1,22 +1,22 @@
 meta {
-  name: Unsubscribe
-  seq: 4
-  type: http
+    name: Unsubscribe
+    seq: 4
+    type: http
 }
 
 delete {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/subscriptions
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/subscriptions
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "deviceId": "{{deviceId}}",
-    "topicName": "{{topic}}"
+      "deviceId": "{{deviceId}}",
+      "topicName": "{{topic}}"
   }
 }

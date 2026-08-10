@@ -1,21 +1,21 @@
 meta {
-  name: Listen to topic (SSE)
-  seq: 9
-  type: http
+    name: Listen to topic (SSE)
+    seq: 9
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/topics/{{topic}}/listen
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/topics/{{topic}}/listen
 }
 
 headers {
-  Accept: text/event-stream
+    Accept: text/event-stream
 }
 
 params:query {
-  ~since: all
+    ~since: all
 }
 
 docs {

@@ -1,24 +1,24 @@
 meta {
-  name: Publish scheduled
-  seq: 4
-  type: http
+    name: Publish scheduled
+    seq: 4
+    type: http
 }
 
 post {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/publish/{{topic}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/publish/{{topic}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "body": "fires in five minutes",
-    "scheduledAt": {{scheduledAt}},
-    "title": "Scheduled reminder"
+      "body": "fires in five minutes",
+      "scheduledAt": {{scheduledAt}},
+      "title": "Scheduled reminder"
   }
 }
 

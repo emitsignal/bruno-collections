@@ -1,15 +1,15 @@
 meta {
-  name: List deliveries
-  seq: 7
-  type: http
+    name: List deliveries
+    seq: 7
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/webhooks/{{webhookId}}/deliveries?limit=50
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/webhooks/{{webhookId}}/deliveries?limit=50
 }
 
 params:query {
-  limit: 50
+    limit: 50
 }

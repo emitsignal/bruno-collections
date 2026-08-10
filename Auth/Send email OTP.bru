@@ -1,19 +1,19 @@
 meta {
-  name: Send email OTP
-  seq: 1
-  type: http
+    name: Send email OTP
+    seq: 1
+    type: http
 }
 
 post {
-  auth: none
-  body: json
-  url: {{baseUrl}}/api/auth/email-otp/send-verification-otp
+    auth: none
+    body: json
+    url: {{baseUrl}}/api/auth/email-otp/send-verification-otp
 }
 
 body:json {
   {
-    "email": "you@example.com",
-    "type": "sign-in"
+      "email": "you@example.com",
+      "type": "sign-in"
   }
 }
 

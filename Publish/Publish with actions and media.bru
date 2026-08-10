@@ -1,48 +1,48 @@
 meta {
-  name: Publish with actions and media
-  seq: 5
-  type: http
+    name: Publish with actions and media
+    seq: 5
+    type: http
 }
 
 post {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/publish/{{topic}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/publish/{{topic}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "actions": [
-      {
-        "label": "Open run",
-        "type": "view",
-        "url": "https://example.com/runs/42"
+      "actions": [
+          {
+              "label": "Open run",
+              "type": "view",
+              "url": "https://example.com/runs/42"
+          },
+          {
+              "label": "Ack",
+              "type": "acknowledge"
+          }
+      ],
+      "bannerImage": {
+          "href": "https://example.com/banner.png",
+          "title": "run summary"
       },
-      {
-        "label": "Ack",
-        "type": "acknowledge"
-      }
-    ],
-    "bannerImage": {
-      "href": "https://example.com/banner.png",
-      "title": "run summary"
-    },
-    "body": "3 tests failed on main",
-    "inlineAttachments": [
-      {
-        "href": "https://example.com/build.log",
-        "title": "build.log"
-      }
-    ],
-    "inlineImages": [
-      "https://example.com/chart.png"
-    ],
-    "priority": 4,
-    "title": "Build failed"
+      "body": "3 tests failed on main",
+      "inlineAttachments": [
+          {
+              "href": "https://example.com/build.log",
+              "title": "build.log"
+          }
+      ],
+      "inlineImages": [
+          "https://example.com/chart.png"
+      ],
+      "priority": 4,
+      "title": "Build failed"
   }
 }
 

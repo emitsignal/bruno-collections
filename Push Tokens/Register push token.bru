@@ -1,24 +1,24 @@
 meta {
-  name: Register push token
-  seq: 2
-  type: http
+    name: Register push token
+    seq: 2
+    type: http
 }
 
 post {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/push-tokens
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/push-tokens
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "deviceId": "{{deviceId}}",
-    "platform": "ios",
-    "token": "ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]"
+      "deviceId": "{{deviceId}}",
+      "platform": "ios",
+      "token": "ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]"
   }
 }
 

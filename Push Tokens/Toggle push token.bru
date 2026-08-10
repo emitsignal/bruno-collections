@@ -1,21 +1,21 @@
 meta {
-  name: Toggle push token
-  seq: 3
-  type: http
+    name: Toggle push token
+    seq: 3
+    type: http
 }
 
 patch {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/push-tokens/{{pushTokenId}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/push-tokens/{{pushTokenId}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "pushEnabled": false
+      "pushEnabled": false
   }
 }

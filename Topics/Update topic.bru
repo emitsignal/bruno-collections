@@ -1,24 +1,24 @@
 meta {
-  name: Update topic
-  seq: 5
-  type: http
+    name: Update topic
+    seq: 5
+    type: http
 }
 
 patch {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/topics/{{topic}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/topics/{{topic}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "accessMode": "private",
-    "description": "Deploy notifications for the api service",
-    "displayName": "My Topic"
+      "accessMode": "private",
+      "description": "Deploy notifications for the api service",
+      "displayName": "My Topic"
   }
 }
 

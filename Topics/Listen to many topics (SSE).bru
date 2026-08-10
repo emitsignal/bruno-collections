@@ -1,22 +1,22 @@
 meta {
-  name: Listen to many topics (SSE)
-  seq: 10
-  type: http
+    name: Listen to many topics (SSE)
+    seq: 10
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/listen?topics={{topic}}
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/listen?topics={{topic}}
 }
 
 headers {
-  Accept: text/event-stream
+    Accept: text/event-stream
 }
 
 params:query {
-  ~since: all
-  topics: {{topic}}
+    ~since: all
+    topics: {{topic}}
 }
 
 docs {

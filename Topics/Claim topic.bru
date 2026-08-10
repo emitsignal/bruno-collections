@@ -1,22 +1,22 @@
 meta {
-  name: Claim topic
-  seq: 6
-  type: http
+    name: Claim topic
+    seq: 6
+    type: http
 }
 
 post {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/topics/{{topic}}/claim
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/topics/{{topic}}/claim
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "accessMode": "private"
+      "accessMode": "private"
   }
 }
 

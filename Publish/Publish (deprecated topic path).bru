@@ -1,23 +1,23 @@
 meta {
-  name: Publish (deprecated topic path)
-  seq: 6
-  type: http
+    name: Publish (deprecated topic path)
+    seq: 6
+    type: http
 }
 
 post {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/topic/{{topic}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/topic/{{topic}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "body": "responds with Deprecation and Link headers",
-    "title": "Legacy path"
+      "body": "responds with Deprecation and Link headers",
+      "title": "Legacy path"
   }
 }
 

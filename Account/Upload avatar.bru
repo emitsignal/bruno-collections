@@ -1,17 +1,17 @@
 meta {
-  name: Upload avatar
-  seq: 2
-  type: http
+    name: Upload avatar
+    seq: 2
+    type: http
 }
 
 post {
-  auth: inherit
-  body: multipartForm
-  url: {{baseUrl}}/user/avatar
+    auth: inherit
+    body: multipartForm
+    url: {{baseUrl}}/user/avatar
 }
 
 body:multipart-form {
-  file: @file()
+    file: @file()
 }
 
 docs {

@@ -1,22 +1,22 @@
 meta {
-  name: List subscribed messages
-  seq: 6
-  type: http
+    name: List subscribed messages
+    seq: 6
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/subscriptions/messages?deviceId={{deviceId}}&limit=50
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/subscriptions/messages?deviceId={{deviceId}}&limit=50
 }
 
 params:query {
-  ~cursor:
-  deviceId: {{deviceId}}
-  limit: 50
-  ~minPriority: 3
-  ~tags: deploy
-  ~topicName: {{topic}}
+    ~cursor:
+    deviceId: {{deviceId}}
+    limit: 50
+    ~minPriority: 3
+    ~tags: deploy
+    ~topicName: {{topic}}
 }
 
 docs {

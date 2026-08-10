@@ -64,3 +64,20 @@ to bottom populates most variables on its own:
   in the UI before they will send.
 - *Create webhook with signing secret* carries a placeholder secret; replace it with
   the provider's real signing secret.
+
+## File conventions
+
+Keys are sorted alphabetically in every order-insensitive block — `meta`, the method
+block, `headers`, `params:query`, `vars`, and object keys inside `body:json`. Array
+element order, block order, and the `seq` values are meaningful and left alone.
+
+Indentation is 4 spaces per `.editorconfig`, with one exception: `docs`, `body:text`,
+and the multiline `body:json` / `script` blocks keep a **2-space base indent**. Bruno's
+parser outdents those blocks by a hardcoded 2 spaces, so anything deeper becomes part
+of the parsed content — for `body:text` that content is the request payload. Their
+inner levels are still 4, so the JSON and JS that Bruno hands to the server are
+4-space indented.
+
+Note that editing a request in Bruno's GUI makes it re-serialize that file with its
+own 2-space indentation and its own key order. Re-run the formatting pass if you want
+the collection to stay consistent after GUI edits.

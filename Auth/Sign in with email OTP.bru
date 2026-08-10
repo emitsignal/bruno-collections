@@ -1,25 +1,25 @@
 meta {
-  name: Sign in with email OTP
-  seq: 2
-  type: http
+    name: Sign in with email OTP
+    seq: 2
+    type: http
 }
 
 post {
-  auth: none
-  body: json
-  url: {{baseUrl}}/api/auth/sign-in/email-otp
+    auth: none
+    body: json
+    url: {{baseUrl}}/api/auth/sign-in/email-otp
 }
 
 body:json {
   {
-    "email": "you@example.com",
-    "otp": "123456"
+      "email": "you@example.com",
+      "otp": "123456"
   }
 }
 
 script:post-response {
   if (res.getStatus() === 200 && res.getBody()?.token) {
-    bru.setEnvVar("token", res.getBody().token);
+      bru.setEnvVar("token", res.getBody().token);
   }
 }
 

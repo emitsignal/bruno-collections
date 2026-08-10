@@ -1,11 +1,11 @@
 meta {
-  name: Delete webhook
-  seq: 6
-  type: http
+    name: Delete webhook
+    seq: 6
+    type: http
 }
 
 delete {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/webhooks/{{webhookId}}
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/webhooks/{{webhookId}}
 }

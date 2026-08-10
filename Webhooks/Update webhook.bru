@@ -1,24 +1,24 @@
 meta {
-  name: Update webhook
-  seq: 5
-  type: http
+    name: Update webhook
+    seq: 5
+    type: http
 }
 
 patch {
-  auth: inherit
-  body: json
-  url: {{baseUrl}}/webhooks/{{webhookId}}
+    auth: inherit
+    body: json
+    url: {{baseUrl}}/webhooks/{{webhookId}}
 }
 
 headers {
-  Content-Type: application/json
+    Content-Type: application/json
 }
 
 body:json {
   {
-    "name": "github pushes (renamed)",
-    "status": "paused",
-    "template": null,
-    "topicName": "{{topic}}"
+      "name": "github pushes (renamed)",
+      "status": "paused",
+      "template": null,
+      "topicName": "{{topic}}"
   }
 }

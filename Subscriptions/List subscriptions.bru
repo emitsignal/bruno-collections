@@ -1,17 +1,17 @@
 meta {
-  name: List subscriptions
-  seq: 1
-  type: http
+    name: List subscriptions
+    seq: 1
+    type: http
 }
 
 get {
-  auth: inherit
-  body: none
-  url: {{baseUrl}}/subscriptions?deviceId={{deviceId}}
+    auth: inherit
+    body: none
+    url: {{baseUrl}}/subscriptions?deviceId={{deviceId}}
 }
 
 params:query {
-  deviceId: {{deviceId}}
+    deviceId: {{deviceId}}
 }
 
 docs {
