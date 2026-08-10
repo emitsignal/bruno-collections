@@ -1,0 +1,42 @@
+meta {
+  name: Create webhook
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/webhooks
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "github pushes",
+    "source": "github",
+    "topicName": "{{topic}}",
+    "verification": "none"
+  }
+}
+
+script:post-response {
+  const body = res.getBody();
+  if (body?.id) {
+    bru.setEnvVar("webhookId", body.id);
+    bru.setEnvVar("webhookSlug", body.slug);
+  }
+}
+
+docs {
+  `source` is one of `custom`, `github`, `grafana`, `stripe`, `vercel` and only
+  picks the slug prefix and default parsing. The response's `endpointUrl` is the
+  `/h/<slug>` path senders POST to.
+
+  To verify signatures, set `verification` to a scheme other than `none` and send
+  a `secret`; schemes that need extra parameters also require
+  `verificationConfig`. Signatures are checked against the raw request body.
+}

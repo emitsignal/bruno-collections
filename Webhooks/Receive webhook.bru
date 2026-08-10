@@ -1,0 +1,29 @@
+meta {
+  name: Receive webhook
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/h/{{webhookSlug}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "event": "deployment.succeeded",
+    "environment": "production",
+    "sha": "0354654"
+  }
+}
+
+docs {
+  The public ingest endpoint providers POST to — never authenticated with the
+  collection token. If the webhook has a verification scheme, the matching
+  signature header must be present and must validate against this exact body.
+}

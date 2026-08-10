@@ -1,0 +1,11 @@
+meta {
+  name: Get webhook
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/webhooks/{{webhookId}}
+  body: none
+  auth: inherit
+}

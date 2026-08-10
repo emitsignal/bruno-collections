@@ -1,0 +1,24 @@
+meta {
+  name: Stream deliveries (SSE)
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/webhooks/stream
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: text/event-stream
+}
+
+params:query {
+  ~source: github
+}
+
+docs {
+  Live feed of incoming deliveries across the user's webhooks; `source` filters
+  to one provider. Long-lived — cancel the request when done.
+}
