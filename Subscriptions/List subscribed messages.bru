@@ -1,0 +1,24 @@
+meta {
+  name: List subscribed messages
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/subscriptions/messages?deviceId={{deviceId}}&limit=50
+  body: none
+  auth: inherit
+}
+
+params:query {
+  deviceId: {{deviceId}}
+  limit: 50
+  ~cursor: 
+  ~minPriority: 3
+  ~tags: deploy
+  ~topicName: {{topic}}
+}
+
+docs {
+  The unified inbox across every subscribed topic. `limit` is 1-200.
+}

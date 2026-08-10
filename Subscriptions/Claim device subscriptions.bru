@@ -1,0 +1,26 @@
+meta {
+  name: Claim device subscriptions
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/subscriptions/claim
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "deviceId": "{{deviceId}}"
+  }
+}
+
+docs {
+  Attaches subscriptions that a device created anonymously to the now
+  authenticated user.
+}

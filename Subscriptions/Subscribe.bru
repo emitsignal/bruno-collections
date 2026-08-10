@@ -1,0 +1,37 @@
+meta {
+  name: Subscribe
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/subscriptions
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "deviceId": "{{deviceId}}",
+    "topicName": "{{topic}}",
+    "pushEnabled": true,
+    "settings": {
+      "description": "deploys for the api service",
+      "listenSince": "subscription_date"
+    }
+  }
+}
+
+script:post-response {
+  if (res.getBody()?.id) {
+    bru.setEnvVar("subscriptionId", res.getBody().id);
+  }
+}
+
+docs {
+  `listenSince` is `always` (replay all history) or `subscription_date`.
+}

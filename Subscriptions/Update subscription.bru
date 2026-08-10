@@ -1,0 +1,26 @@
+meta {
+  name: Update subscription
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/subscriptions/{{subscriptionId}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "deviceId": "{{deviceId}}",
+    "pushEnabled": false,
+    "settings": {
+      "description": "muted for now",
+      "listenSince": "always"
+    }
+  }
+}
