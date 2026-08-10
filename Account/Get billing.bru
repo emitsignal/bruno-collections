@@ -1,0 +1,15 @@
+meta {
+  name: Get billing
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/billing
+  body: none
+  auth: inherit
+}
+
+docs {
+  Current plan, its limits, and usage against the daily quotas.
+}
